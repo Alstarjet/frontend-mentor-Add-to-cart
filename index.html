@@ -29,8 +29,9 @@
       height: 97vh;
       background-color: hsl(30, 38%, 92%);
     }
-    .card>img{
+    .card>picture>img{
       max-height: 50vh;
+      max-width: 100%;
     }
     .info{
       font-family:'Montserrat', sans-serif;
@@ -83,16 +84,7 @@
       font-weight: 100;
       font-size: small;
     }
-    #producto-mobile{
-      display: none;
-    }
     @media (max-width: 375px) {
-      #producto-mobile{
-      display:flex;
-      }
-      #producto-desktop{
-        display:none;
-      }
       .card{
       display: flex;
       flex-direction:column;
@@ -123,10 +115,12 @@
   </style>
 </head>
 <body>
-    <div class="cuerpo">
+    <main class="cuerpo">
       <div class="card">
-        <img src="./images/image-product-desktop.jpg"id="producto-desktop"/>
-        <img src="./images/image-product-mobile.jpg" id="producto-mobile"/>
+        <picture>
+          <source media="(max-width:375px)" srcset="./images/image-product-mobile.jpg">
+          <img src="./images/image-product-desktop.jpg"id="producto-desktop"/>
+        </picture>
         <div class="info">
           <h2>P E R F U M E</h2>
           <h1>Gabrielle Essence Eau De Parfum</h1>
@@ -136,7 +130,7 @@
         <button type="button"><img src="./images/icon-cart.svg" alt="carrito" srcset=""> Add to Cart</button>     
         </div>
       </div>
-    </div>
+    </main>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Alberto Estrella</a>.
